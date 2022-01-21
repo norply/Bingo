@@ -11,7 +11,10 @@ SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     setlocale(LC_ALL, "Russian");
     setlocale(LC_CTYPE, "rus");
+    std::random_device rd;
+    std::mt19937 mersenne(rd());
     float n;// Число бочонков
+    int rand;// Случайное число от 0 до n-1;
      cout << "Введите число бочонков: ";
     for (;;)// Проверка ввода числа бочонков
     {
@@ -40,5 +43,10 @@ SetConsoleCP(1251);
         }
         cin.clear();
         cin.ignore(1000000000, '\n');
+    }
+    vector<int> barrels(n);
+    for (int i=1; i<=n; i++)//Заполняем вектор номерами бочонков
+    {
+        barrels[i - 1] = i;
     }
  }
