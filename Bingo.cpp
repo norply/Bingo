@@ -49,4 +49,21 @@ SetConsoleCP(1251);
     {
         barrels[i - 1] = i;
     }
+     while (n > 0)
+    {
+        rand = mersenne() % int(n);
+
+        
+            cout << endl << "Нажмите клавишу Enter, чтобы вытащить бочонок из мешка";
+            if (_getch())
+            {
+                file << endl << "Пользователь нажал клавишу";
+                
+            }
+        
+        
+        cout << endl<< "Выпал бочонок номер: "<< barrels[rand];
+          barrels.erase(barrels.begin() + rand);
+        n = n - 1;
+    }
  }
